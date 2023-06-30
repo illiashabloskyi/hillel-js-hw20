@@ -21,7 +21,7 @@ class Hamburger {
     this.topping.push(topping);
   }
 
-  calculate() {
+  calculateCalories() {
     const baseCalories = this.size.calories + this.stuffing.calories;
     const toppingCalories = this.topping.reduce(
       (total, topping) => total + topping.calories,
@@ -52,7 +52,7 @@ console.log(hamburger);
 hamburger.addTopping(Hamburger.TOPPING_MAYO);
 
 // запитаємо скільки там калорій
-console.log("Calories: " + hamburger.calculate());
+console.log("Calories: " + hamburger.calculateCalories());
 
 //  скільки коштує
 console.log("Price: " + hamburger.calculatePrice());
@@ -63,4 +63,4 @@ hamburger.addTopping(Hamburger.TOPPING_SAUCE);
 // А скільки тепер коштує?
 console.log("Price with sauce: " + hamburger.calculatePrice());
 // А скільки тепер калорій?
-console.log("Calories with sauce: " + hamburger.calculate());
+console.log("Calories with sauce: " + hamburger.calculateCalories());
